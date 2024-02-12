@@ -53,7 +53,7 @@ class ProductController {
       const result = await ProductModel.findById(req.params.id);
       res
         .status(201)
-        .json({ status: "success", message: "good", record: result });
+        .json({ status: "success", message: "good", records: result });
     } catch (error) {
       console.log(error);
     }
