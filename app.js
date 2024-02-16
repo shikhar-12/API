@@ -11,9 +11,9 @@ const cors = require("cors");
 app.use(cors());
 connectdb();
 app.use(express.json());
+app.use(cookiepasrser());
 app.use(express.urlencoded({ extended: false }));
 app.use(fileupload({ useTempFiles: true }));
-app.use(cookiepasrser());
 app.use("/api", web);
 
 // app.use(express.urlencoded({ extended: true }));

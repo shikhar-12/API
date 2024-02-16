@@ -92,6 +92,7 @@ class UserController {
             const token = jwt.sign({ ID: record._id }, "pn@975");
             // console.log(token);
             res.cookie("token", token);
+            // console.log(tokena);
             res.status(201).json({
               status: "Success",
               message: "Logged in",
