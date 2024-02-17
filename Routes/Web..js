@@ -4,6 +4,7 @@ const UC = require("../Controller/UserController");
 const PC = require("../Controller/profileController");
 const CC = require("../Controller/CategoryController");
 const PRC = require("../Controller/ProductController");
+const OC = require("../Controller/OrderController");
 const PaymentController = require("../Controller/PaymentController");
 const checkuserauth = require("../Middleware/auth");
 
@@ -34,5 +35,11 @@ router.post(
   PaymentController.processPayment
 );
 router.get("/stripeapikey", checkuserauth, PaymentController.sendStripeApiKey);
+
+router.post("/order/create", checkuserauth, OC.createorder);
+router.post("/order/getsingleorder/:id", checkuserauth, OC.getsingleorder);
+router.get("/order/myorder", checkuserauth, OC.myorder);
+router.get("/order/getallorders", checkuserauth, OC.getallorders);
+router.get("/order/deleteorder/:id", checkuserauth, OC.deleteorder);
 
 module.exports = router;
