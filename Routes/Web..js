@@ -34,7 +34,7 @@ router.post(
   checkuserauth,
   PaymentController.processPayment
 );
-router.get("/stripeapikey", checkuserauth, PaymentController.sendStripeApiKey);
+router.get("/stripeapikey", PaymentController.sendStripeApiKey);
 
 router.post("/order/create", checkuserauth, OC.createorder);
 router.post("/order/getsingleorder/:id", checkuserauth, OC.getsingleorder);
