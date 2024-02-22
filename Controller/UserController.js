@@ -96,7 +96,7 @@ class UserController {
             res.status(201).json({
               status: "Success",
               message: "Logged in",
-              record,
+              records,
             });
           } else {
             res
