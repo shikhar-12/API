@@ -85,11 +85,11 @@ class UserController {
       // console.log(req.body);
       const { email: em, password: pw } = req.body;
       if (em && pw) {
-        const record = await usermodel.findOne({ email: em });
-        if (record) {
-          const ismatched = await bcrypt.compare(pw, record.password);
+        const records = await usermodel.findOne({ email: em });
+        if (records) {
+          const ismatched = await bcrypt.compare(pw, records.password);
           if (ismatched) {
-            const token = jwt.sign({ ID: record._id }, "pn@975");
+            const token = jwt.sign({ ID: records._id }, "pn@975");
             // console.log(token);
             res.cookie("token", token);
             // console.log(tokena);
