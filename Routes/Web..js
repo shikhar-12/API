@@ -19,6 +19,7 @@ router.post("/updateprofile", checkuserauth, PC.updateprofile);
 
 router.post("/categoryinsert", CC.CategoryInsert);
 router.get("/categorydisplay", CC.CategoryDisplay);
+
 router.get("/categoryview/:id", CC.CategoryView);
 router.post("/categoryupdate/:id", CC.CategoryUpdate);
 router.post("/categorydelete/:id", CC.CategoryDelete);
@@ -26,6 +27,7 @@ router.post("/categorydelete/:id", CC.CategoryDelete);
 router.post("/createproduct", PRC.CreateProduct);
 router.get("/getallproduct", PRC.GetAllProduct);
 router.get("/getproductdetail/:id", PRC.GetProductDetail);
+router.get("/findbycategory/:cname", PRC.FindByCategory);
 router.post("/updateproduct/:id", PRC.UpdateProduct);
 router.post("/deleteproduct/:id", PRC.DeleteProduct);
 

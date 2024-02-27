@@ -102,5 +102,16 @@ class ProductController {
       console.log(error);
     }
   };
+  static FindByCategory = async (req, res) => {
+    try {
+      const result = await ProductModel.find({ category: req.params.cname });
+
+      res
+        .status(201)
+        .json({ status: "success", message: "good", records: result });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 }
 module.exports = ProductController;
